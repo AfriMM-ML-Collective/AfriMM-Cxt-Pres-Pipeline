@@ -1,19 +1,22 @@
 ## AFRICAPTION
 
-### Context Preserving Pipeline
 
 [![arXiv](https://img.shields.io/badge/arXiv-2510.17405-red)](https://arxiv.org/abs/2510.17405)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Hugging Face Dataset](https://img.shields.io/badge/HuggingFace-AfriMM%2FAfriMMD-blue)](https://huggingface.co/datasets/AfriMM/AfriMMD)
 
+### 📋 Overview
+
 This repository presents the AfriCaption pipeline, a robust system designed to enhance data quality and ensure continuous improvement in African NLP through advanced translation and evaluation mechanisms. It addresses the critical need for high-quality data in African NLP, where existing machine translation models often exhibit inconsistent performance across languages.
+
+### 🔄 Pipeline
 
 <p align="center">
   <img src="external_assets/pipeline_shot.png" alt="Context Preserving Pipeline overview" width="820" />
 </p>
 
 
-### Project Structure
+### 📁 Project Structure
 
 ```
 Cxt-pres-pipeline/
@@ -36,26 +39,26 @@ Cxt-pres-pipeline/
 └── README.md
 ```
 
-### Quick Start
+### 🚀 Quick Start
 
-**Test with 5 samples:**
+**🧪 Test with 5 samples:**
 ```bash
 python test.py
 ```
 
-**Process entire dataset:**
+**▶️ Process entire dataset:**
 ```bash
 python run.py
 ```
 
-**Custom usage:**
+**⚙️ Custom usage:**
 ```bash
 python main.py --test                                    # Test mode
 python main.py --models-yaml config/models.yaml         # Custom config
 python main.py --out-dir custom_outputs                 # Custom output
 ```
 
-### Usage
+### 💡 Usage
 
 The pipeline automatically:
 - Detects model configuration files (`config/models_multilingual.yaml` by default)
@@ -64,7 +67,7 @@ The pipeline automatically:
 - Retains higher-scoring translations (old or new)
 - Generates outputs in JSONL and Parquet formats with audit trails
 
-### Configuration
+### ⚙️ Configuration
 
 Model configurations are defined in YAML files under `config/`:
 
@@ -86,7 +89,7 @@ models:
   ...
 ```
 
-### Output
+### 📝 Output
 
 The pipeline generates:
 - `outputs/afrimmd_updated.jsonl` - JSONL format with audit trail
@@ -94,7 +97,7 @@ The pipeline generates:
 
 Each record includes an `_audit` field with translation quality scores and retention decisions.
 
-### Citations
+### 📚 Citations
 
 If you use this pipeline or dataset, please cite:
 
