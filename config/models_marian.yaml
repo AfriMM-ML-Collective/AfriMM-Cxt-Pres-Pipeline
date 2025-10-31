@@ -1,0 +1,5 @@
+models:
+  afr: "Helsinki-NLP/opus-mt-en-af"
+  amh: "Helsinki-NLP/opus-mt-en-am"
+  bem: "Helsinki-NLP/opus-mt-en-bem"
+  # add more where available; keys must match dataset columns

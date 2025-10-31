@@ -1,0 +1,9 @@
+# models_multilingual.yaml
+type: "nllb_like"
+model: "facebook/nllb-200-distilled-600M"   # must NOT be NLLB/M2M
+lang_tokens:
+  afr: "afr_Latn"
+  amh: "amh_Ethi"
+  bem: "bem_Latn"
+  cjk: "cjk_Latn"
+  # add any subset/superset of AfriMMD columns
