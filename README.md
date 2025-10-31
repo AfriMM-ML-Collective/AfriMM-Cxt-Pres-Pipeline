@@ -1,12 +1,17 @@
 ## AFRICAPTION
 
-### Architecture
+### Context Preserving Pipeline
+
+[![arXiv](https://img.shields.io/badge/arXiv-2510.17405-red)](https://arxiv.org/abs/2510.17405)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Hugging Face Dataset](https://img.shields.io/badge/HuggingFace-AfriMM%2FAfriMMD-blue)](https://huggingface.co/datasets/AfriMM/AfriMMD)
+
+This repository presents the AfriCaption pipeline, a robust system designed to enhance data quality and ensure continuous improvement in African NLP through advanced translation and evaluation mechanisms. It addresses the critical need for high-quality data in African NLP, where existing machine translation models often exhibit inconsistent performance across languages.
 
 <p align="center">
   <img src="external_assets/pipeline_shot.png" alt="Context Preserving Pipeline overview" width="820" />
 </p>
 
-This pipeline is designed to preserve and leverage conversational context across turns, enabling consistent, factual, and stylistically coherent outputs over extended interactions. It integrates retrieval-augmented context encoding with disciplined prompt construction and safety-aware decoding to minimize drift, reduce hallucinations, and retain salient entities and relations over time.
 
 ### Project Structure
 
@@ -30,14 +35,6 @@ Cxt-pres-pipeline/
 ├── run.py               # Full dataset processing script
 └── README.md
 ```
-
-### Features
-
-- **Context acquisition and normalization**: Curates inputs (transcripts, captions, metadata) and performs robust preprocessing to standardize signals while retaining temporal structure.
-- **Memory and retrieval**: Encodes session history and salient entities; retrieves only the most decision-relevant context to control prompt length and latency.
-- **Prompt orchestration**: Assembles declarative constraints, factual anchors, and user intent into a stable instruction scaffold that is resilient to domain shift.
-- **Generation with safeguards**: Applies calibrated decoding, confidence cues, and refusal heuristics for sensitive or uncertain content.
-- **Evaluation and refinement**: Monitors coherence, factuality, and style adherence; supports human-in-the-loop review for continuous improvement.
 
 ### Quick Start
 
@@ -96,3 +93,19 @@ The pipeline generates:
 - `outputs/afrimmd_updated.parquet` - Parquet format for analysis
 
 Each record includes an `_audit` field with translation quality scores and retention decisions.
+
+### Citations
+
+If you use this pipeline or dataset, please cite:
+
+```bibtex
+@misc{oduwole2025africaptionestablishingnewparadigm,
+  title={AFRICAPTION: Establishing a New Paradigm for Image Captioning in African Languages}, 
+  author={Mardiyyah Oduwole and Prince Mireku and Fatimo Adebanjo and Oluwatosin Olajide and Mahi Aminu Aliyu and Jekaterina Novikova},
+  year={2025},
+  eprint={2510.17405},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2510.17405}
+}
+```
